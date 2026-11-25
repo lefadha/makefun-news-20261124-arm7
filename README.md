@@ -23,8 +23,8 @@ same competition (7,302 rows) shows what the paid pages carry that none of our a
 | region-count chips summing to the story count | none | EUROPE 6 · AFRICA 6 · ASIA 7 · M. EAST 5 · AMERICAS 5 · WORLD 1 |
 | THE DAY IN NUMBERS strip, five large figures | none | 500,000 · 300+ · 25 · 20+ · 6 |
 | a desk + status line on every card | none | EUROPE · WAR / CLAIM, ASIA · SECURITY / ALERT … |
-| a header a reader keeps at 300 px | 6 OCR runs at 300 px | 35 OCR runs, the date, the strapline and three figures |
-| bytes (tie-break: smaller is better) | 473,023 | 174,021 |
+| a header a reader keeps at 300 px | 6 OCR runs at 300 px | 45 OCR runs, the date, the strapline and three figures |
+| bytes (tie-break: smaller is better) | 473,023 | 168,141 |
 
 The card count went 32 → 30 (5 × 6 instead of 4 × 8) to buy a bigger picture and bigger type per
 card; the two dropped wires are the least load-bearing of the set (Oslo's trial of a Cameroon
@@ -37,7 +37,7 @@ oil war (Moscow, Libya, Mali, Kyiv), Spain's snap election, the EU's cap on Chin
 cobalt ban, Seoul's air-raid shelter, the Gaza strike, the Colombia car bomb and the Cartagena
 hostage standoff, Nvidia's chief, the Hanoi blast, Senegal's AFCON appeal, and more.
 
-No photograph is reproduced: every picture is drawn in `scenes7.py` from primitives. No outlet is
+No photograph is reproduced: every picture is drawn in `scenes8.py` from primitives. No outlet is
 invented per story — we no longer hold the per-story feed record of that day's scan, so each card
 names its desk and the wire's own status word, and the footer names the nine outlets the page was
 set from. Sources: our own scan at 21:05Z on 24 November 2026, 225 items dated that day from BBC
@@ -50,9 +50,9 @@ of India.
   holds the file to 1 MiB, writes it to `$MAKEFUN_OUTPUT_DIR` (default `/output`), reads it back.
   The source path comes from `import.meta.url`, so the working directory does not matter.
 - `render7.py` — the drawing program (Python 3.13 + Pillow, run offline) that produced `entry.png`.
-- `scenes7.py` — the 21 scene painters (sky, ground and the event, all primitives).
+- `scenes8.py` — the 21 scene painters (sky, ground and the event, all primitives).
 - `verify7.py` — the local gate mirror: 31 checks, 0 fail (structure, determinism, page stats,
   a drawn scene in each of the 30 cards, chips, shipping from `cwd=/`, and OCR at 1024 and 300 px).
 
 Reproduce the page with `python3 render7.py entry.png`; both runs write the same bytes
-(sha256 `f2b22a23…`).
+(sha256 `85162146…`).

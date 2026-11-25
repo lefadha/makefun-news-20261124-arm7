@@ -37,7 +37,7 @@ import sys
 
 from PIL import Image, ImageDraw, ImageFont
 
-import scenes7
+import scenes8 as scenes
 
 W = H = 1024
 S = 2
@@ -115,10 +115,10 @@ NUMBERS = [
 
 CREDIT = ('Set from our own scan of the 24 November 2026 wires: 225 items dated 24 Nov 2026 \u2014 '
           'BBC \u00b7 Al Jazeera \u00b7 Guardian \u00b7 NPR \u00b7 DW \u00b7 France 24 \u00b7 CBC \u00b7 SCMP \u00b7 Times of India. '
-          'Places and figures as those reports give them; every picture is drawn in scenes7.py.')
+          'Places and figures as those reports give them; every picture is drawn in scenes8.py.')
 
 M = 22
-TILE_W, TILE_H = 168, 46      # drawn scene as pasted, logical px
+TILE_W, TILE_H = scenes.TW, scenes.TH      # drawn scene as pasted, logical px
 COLS, ROWS = 5, 6
 
 
@@ -223,7 +223,7 @@ def main(out):
                             outline=RULE, width=1 * S)
         col = REGION[region]
         d.rectangle([x, y0 + 5 * S, x + 3 * S, y0 + rh * S - 5 * S], fill=col)
-        tile = scenes7.scene_tile(scene, col).resize((TILE_W * S, TILE_H * S), Image.LANCZOS)
+        tile = scenes.tile(scene, col)
         img.paste(tile, (int(x + 7 * S), int(y0 + 5 * S)))
         ty = y0 + 5 * S + TILE_H * S + 3 * S
         d.text((x + 7 * S, ty), '%02d' % (i + 1), font=f_no, fill=col)
